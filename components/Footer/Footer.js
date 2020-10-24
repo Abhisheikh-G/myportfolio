@@ -1,5 +1,4 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -30,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(3, 2),
     marginTop: "auto",
-    backgroundColor: theme.palette.primary.main,
+    background: `linear-gradient( ${theme.palette.primary.light}, ${theme.palette.primary.main})`,
+
     color: theme.palette.primary.contrastText,
   },
 }));
@@ -40,7 +40,6 @@ export default function StickyFooter() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Copyright />

@@ -9,7 +9,7 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    background: `linear-gradient( ${theme.palette.background.paper}, ${theme.palette.primary.main})`,
+    background: `linear-gradient( ${theme.palette.background.paper},  ${theme.palette.background.paper}, ${theme.palette.primary.light})`,
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
@@ -20,11 +20,24 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.black,
   },
   highlight: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.main,
   },
   textfield: {
     width: "100%",
     padding: theme.spacing(2),
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: theme.palette.common.white,
+    zIndex: 10,
+    padding: theme.spacing(2),
+    margin: "auto",
+    width: "100%",
+    [theme.breakpoints.up("lg")]: {
+      width: "85%",
+    },
   },
 }));
 
@@ -44,15 +57,8 @@ export default function Contact() {
           </Typography>
           <Box
             component="form"
-            display="flex"
-            flexDirection="column"
-            width="85%"
-            alignItems="center"
+            className={classes.form}
             boxShadow={8}
-            bgcolor="#fff"
-            zIndex={10}
-            p={4}
-            m="auto"
             onSubmit={handleSubmit(onSubmit)}
           >
             <TextField

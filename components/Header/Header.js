@@ -16,6 +16,8 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import WorkIcon from "@material-ui/icons/Work";
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
     height: 48,
     width: 48,
     marginLeft: "auto",
+    margin: theme.spacing(1),
+    cursor: "pointer",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -39,9 +43,18 @@ const useStyles = makeStyles((theme) => ({
   toolbarBg: {
     backgroundColor: theme.palette.primary.dark,
   },
-  tab: {
+  link: {
     textDecoration: "none",
     color: theme.palette.common.white,
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
+  drawerLink: {
+    color: theme.palette.common.black,
+  },
+  drawerHeader: {
+    height: 120,
   },
 }));
 
@@ -49,6 +62,8 @@ export default function Header(props) {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   const [open, setOpen] = useState(false);
+
+  const drawerLink = clsx([classes.tab, classes.drawerLink, classes.link]);
 
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
@@ -59,14 +74,36 @@ export default function Header(props) {
   const list = () => (
     <React.Fragment>
       <List className={classes.list}>
-        <ListItem button key={"mail"}>
+        <ListItem className={classes.drawerHeader}></ListItem>
+        <Divider />
+        <ListItem
+          className={drawerLink}
+          component={Link}
+          href="#contact"
+          button
+          key={"contact"}
+        >
           <ListItemIcon>
             <MailIcon />
           </ListItemIcon>
-          <ListItemText primary={"mail"} />
+          <ListItemText primary={"Contact Me"} />
         </ListItem>
       </List>
       <Divider />
+      <List className={classes.list}>
+        <ListItem
+          className={drawerLink}
+          component={Link}
+          href="#mywork"
+          button
+          key={"mywork"}
+        >
+          <ListItemIcon>
+            <WorkIcon />
+          </ListItemIcon>
+          <ListItemText primary={"My Work"} />
+        </ListItem>
+      </List>
     </React.Fragment>
   );
 
@@ -89,13 +126,13 @@ export default function Header(props) {
                 <Tab
                   component={Link}
                   href="#contact"
-                  className={classes.tab}
+                  className={classes.link}
                   label="Contact"
                 />
                 <Tab
                   component={Link}
                   href="#mywork"
-                  className={classes.tab}
+                  className={classes.link}
                   label="My Work"
                 />
               </Tabs>
@@ -111,8 +148,10 @@ export default function Header(props) {
                 className={classes.drawer}
                 disableBackdropTransition={!iOS}
                 disableDiscovery={iOS}
+                onOpen={() => setOpen(true)}
+                onClose={() => setOpen(false)}
               >
-                {list}
+                {list()}
               </SwipeableDrawer>
             </Hidden>
           </Toolbar>

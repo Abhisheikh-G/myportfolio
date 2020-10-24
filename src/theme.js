@@ -30,6 +30,8 @@ let theme = createMuiTheme({
   overrides: {
     MuiButton: {
       contained: {
+        backgroundColor: "#f4f4f4",
+
         transition: "all 0.2s ease-in",
         "&:hover": {
           backgroundColor: cyan.A200,

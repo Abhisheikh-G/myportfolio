@@ -49,14 +49,14 @@ export default function Hero() {
       <Box className={classes.content}>
         <Container maxWidth="lg">
           <Typography className={classes.title} variant="h2" gutterBottom>
-            Looking For A{" "}
+            Looking For A <br />
             <span className={classes.highlight}>Web Developer?</span>
           </Typography>
           <Typography variant="h3" gutterBottom={true} align="center">
             Hi, I'm <span className={classes.highlight}>Abhisheikh Gill.</span>
           </Typography>
-          <Box m="auto">
-            <Typography variant="h5" gutterBottom={true} align="center">
+          <Container maxWidth="md">
+            <Typography variant="body1" gutterBottom={true} align="center">
               Nice to meet you, I'm a{" "}
               <span className={classes.highlight}>
                 full stack web developer
@@ -66,7 +66,7 @@ export default function Hero() {
                 React.js, Next.js, Gatsby.js, Node.js, PostgreSQL and MongoDB.
               </span>
             </Typography>
-          </Box>
+          </Container>
           <Box display="flex" justifyContent="center">
             <Link href="#contact" className={classes.link}>
               <PillButton text="Contact Me" />
