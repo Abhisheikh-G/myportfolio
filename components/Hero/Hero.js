@@ -8,6 +8,7 @@ import {
   Divider,
 } from "@material-ui/core";
 import PillButton from "../PillButton/PillButton";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   highlight: {
