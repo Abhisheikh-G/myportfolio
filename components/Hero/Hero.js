@@ -47,7 +47,7 @@ export default function Hero() {
             Hi, I'm <span className={classes.highlight}>Abhisheikh Gill.</span>
           </Typography>
           <Box width={"50%"} m="auto">
-            <Typography variant="subtitle1" gutterBottom={true} align="center">
+            <Typography variant="h5" gutterBottom={true} align="center">
               Nice to meet you, I'm a{" "}
               <span className={classes.highlight}>
                 full stack web developer

@@ -137,10 +137,10 @@ export default function Skills(...props) {
             </Grid>
             <Grid item>
               <SkillBlock
-                color={grey[700]}
-                hover={grey[600]}
+                color={grey[400]}
+                hover={grey[200]}
                 text={"Next.js"}
-                textColor="#fff"
+                textColor="#000"
                 imgSrc="next.svg"
               />
             </Grid>

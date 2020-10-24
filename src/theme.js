@@ -15,7 +15,7 @@ import {
 let theme = createMuiTheme({
   palette: {
     primary: {
-      main: lightBlue[800],
+      main: blue[800],
     },
     secondary: {
       main: cyan.A200,
@@ -30,8 +30,9 @@ let theme = createMuiTheme({
   overrides: {
     MuiButton: {
       contained: {
+        transition: "all 0.2s ease-in",
         "&:hover": {
-          backgroundColor: lightBlue[600],
+          backgroundColor: cyan.A200,
         },
       },
     },

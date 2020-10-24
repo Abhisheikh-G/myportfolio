@@ -7,6 +7,7 @@ import Skills from "../components/Skills/Skills";
 import Link from "../src/Link";
 import { Grid, makeStyles } from "@material-ui/core";
 import Projects from "../components/Projects/Projects";
+import Contact from "../components/Contact/Contact";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -34,6 +35,7 @@ export default function Index() {
       <Hero />
       <Skills />
       <Projects />
+      <Contact />
     </React.Fragment>
   );
 }

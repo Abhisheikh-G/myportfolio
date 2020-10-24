@@ -4,6 +4,7 @@ import {
   Container,
   useTheme,
   useMediaQuery,
+  Divider,
 } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -55,7 +56,7 @@ function Project(props) {
       <Card
         className={classes.root}
         classes={{ root: classes.root }}
-        raised="false"
+        raised={false}
       >
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -83,23 +84,26 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.section}>
-      <Container maxWidth="lg">
-        <Typography className={classes.title} variant="h3" gutterBottom>
-          My <span className={classes.highlight}>Work</span>
-        </Typography>
-        <Grid container justify="space-evenly" spacing={4}>
-          <Grid item>
-            <Project />
+    <React.Fragment>
+      <Box id="mywork" className={classes.section}>
+        <Container maxWidth="lg">
+          <Typography className={classes.title} variant="h3" gutterBottom>
+            My <span className={classes.highlight}>Work</span>
+          </Typography>
+          <Grid container justify="space-evenly" spacing={4}>
+            <Grid item>
+              <Project />
+            </Grid>
+            <Grid item>
+              <Project direction="row-reverse" />
+            </Grid>
+            <Grid item>
+              <Project />
+            </Grid>
           </Grid>
-          <Grid item>
-            <Project direction="row-reverse" />
-          </Grid>
-          <Grid item>
-            <Project />
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+      <Divider />
+    </React.Fragment>
   );
 }
