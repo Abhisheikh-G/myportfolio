@@ -184,7 +184,6 @@ export default function Skills(...props) {
           </Grid>
         </Container>
       </Box>
-      <Divider />
     </React.Fragment>
   );
 }

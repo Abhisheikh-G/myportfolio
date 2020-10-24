@@ -104,7 +104,6 @@ export default function Projects() {
           </Grid>
         </Container>
       </Box>
-      <Divider />
     </React.Fragment>
   );
 }

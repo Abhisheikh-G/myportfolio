@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import PillButton from "../PillButton/PillButton";
 import React from "react";
+import Link from "../../src/Link";
 
 const useStyles = makeStyles((theme) => ({
   highlight: {
@@ -32,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(20),
     margin: theme.spacing(1),
   },
+  link: {
+    textDecoration: "none",
+    color: theme.palette.common.white,
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
 }));
 
 export default function Hero() {
@@ -47,7 +55,7 @@ export default function Hero() {
           <Typography variant="h3" gutterBottom={true} align="center">
             Hi, I'm <span className={classes.highlight}>Abhisheikh Gill.</span>
           </Typography>
-          <Box width={"50%"} m="auto">
+          <Box width={"85%"} m="auto">
             <Typography variant="h5" gutterBottom={true} align="center">
               Nice to meet you, I'm a{" "}
               <span className={classes.highlight}>
@@ -60,12 +68,15 @@ export default function Hero() {
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
-            <PillButton text="Contact Me" />
-            <PillButton text="My Work" />
+            <Link href="#contact" className={classes.link}>
+              <PillButton text="Contact Me" />
+            </Link>
+            <Link href="#mywork" className={classes.link}>
+              <PillButton text="My Work" />
+            </Link>
           </Box>
         </Container>
       </Box>
-      <Divider />
     </React.Fragment>
   );
 }
