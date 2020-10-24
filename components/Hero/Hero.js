@@ -55,7 +55,7 @@ export default function Hero() {
           <Typography variant="h3" gutterBottom={true} align="center">
             Hi, I'm <span className={classes.highlight}>Abhisheikh Gill.</span>
           </Typography>
-          <Box width={"85%"} m="auto">
+          <Box m="auto">
             <Typography variant="h5" gutterBottom={true} align="center">
               Nice to meet you, I'm a{" "}
               <span className={classes.highlight}>
