@@ -25,12 +25,14 @@ const useStyles = makeStyles((theme) => ({
   },
   list: {
     width: 240,
+
+    backgroundColor: theme.palette.common.black,
   },
   menuIcon: {
     height: 48,
     width: 48,
     marginLeft: "auto",
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
     cursor: "pointer",
   },
   menuButton: {
@@ -51,10 +53,22 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawerLink: {
-    color: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  drawerIcon: {
+    color: theme.palette.common.white,
   },
   drawerHeader: {
-    height: 120,
+    height: 150,
+  },
+  drawer: {
+    backgroundColor: theme.palette.common.black,
+    borderRight: `1px solid ${theme.palette.secondary.main}`,
+  },
+  logo: {
+    margin: theme.spacing(2),
+    height: 125,
+    width: 125,
   },
 }));
 
@@ -74,7 +88,14 @@ export default function Header(props) {
   const list = () => (
     <React.Fragment>
       <List className={classes.list}>
-        <ListItem className={classes.drawerHeader}></ListItem>
+        <ListItem className={classes.drawerHeader}>
+          <img
+            style={{ margin: "auto" }}
+            src="logo.svg"
+            alt="logo"
+            className={classes.logo}
+          />
+        </ListItem>
         <Divider />
         <ListItem
           className={drawerLink}
@@ -84,7 +105,7 @@ export default function Header(props) {
           key={"contact"}
         >
           <ListItemIcon>
-            <MailIcon />
+            <MailIcon className={classes.drawerIcon} />
           </ListItemIcon>
           <ListItemText primary={"Contact Me"} />
         </ListItem>
@@ -99,7 +120,7 @@ export default function Header(props) {
           key={"mywork"}
         >
           <ListItemIcon>
-            <WorkIcon />
+            <WorkIcon className={classes.drawerIcon} />
           </ListItemIcon>
           <ListItemText primary={"My Work"} />
         </ListItem>
@@ -117,6 +138,7 @@ export default function Header(props) {
             disableGutters
           >
             <Hidden smDown>
+              <img src="logo.svg" alt="logo" className={classes.logo} />
               <Tabs
                 value={value}
                 style={{ width: 400, marginLeft: "auto" }}
@@ -138,14 +160,14 @@ export default function Header(props) {
               </Tabs>
             </Hidden>
 
-            <Hidden smUp>
+            <Hidden mdUp>
               <MenuIcon
                 className={classes.menuIcon}
                 onClick={() => setOpen(!open)}
               />
               <SwipeableDrawer
                 open={open}
-                className={classes.drawer}
+                classes={{ paper: classes.drawer }}
                 disableBackdropTransition={!iOS}
                 disableDiscovery={iOS}
                 onOpen={() => setOpen(true)}
