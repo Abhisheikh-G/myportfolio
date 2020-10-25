@@ -29,8 +29,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(3, 2),
     marginTop: "auto",
-    background: `linear-gradient( ${theme.palette.primary.light}, ${theme.palette.primary.main})`,
-
+    backgroundColor: theme.palette.primary.dark,
     color: theme.palette.primary.contrastText,
   },
 }));

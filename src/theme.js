@@ -15,10 +15,10 @@ import {
 let theme = createMuiTheme({
   palette: {
     primary: {
-      main: blue[800],
+      main: "#000",
     },
     secondary: {
-      main: cyan.A200,
+      main: yellow.A200,
     },
     error: {
       main: red.A400,

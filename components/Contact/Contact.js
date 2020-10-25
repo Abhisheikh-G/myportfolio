@@ -9,7 +9,7 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    background: `linear-gradient( ${theme.palette.background.paper},  ${theme.palette.background.paper}, ${theme.palette.primary.light})`,
+    background: `linear-gradient( ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: "center",
     textTransform: "uppercase",
-    color: theme.palette.common.black,
+    color: theme.palette.primary.contrastText,
   },
   highlight: {
-    color: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
   },
   textfield: {
     width: "100%",
