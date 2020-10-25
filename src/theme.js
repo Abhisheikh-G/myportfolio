@@ -24,7 +24,7 @@ let theme = createMuiTheme({
       main: red.A400,
     },
     background: {
-      default: "#fff",
+      default: "#000",
     },
   },
   overrides: {
@@ -34,7 +34,7 @@ let theme = createMuiTheme({
 
         transition: "all 0.2s ease-in",
         "&:hover": {
-          backgroundColor: cyan.A200,
+          backgroundColor: yellow.A200,
         },
       },
     },

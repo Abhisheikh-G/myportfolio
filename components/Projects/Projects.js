@@ -16,7 +16,6 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    background: `linear-gradient( ${theme.palette.primary.light},${theme.palette.primary.main})`,
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
