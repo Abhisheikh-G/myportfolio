@@ -9,7 +9,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import StickyFooter from "../components/Footer/Footer";
 import Box from "@material-ui/core/Box";
 import "fontsource-roboto";
-import theme from "../src/theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
