@@ -22,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     borderRadius: 0,
     boxShadow: theme.shadows[0],
+    height: 160,
+    width: 320,
   },
   title: {
     textAlign: "center",
@@ -48,8 +50,8 @@ function Project(props) {
     >
       <Box
         component="img"
-        height={200}
-        width={365}
+        height={160}
+        width={320}
         src="bg.webp"
         alt="Project Photo"
       />
