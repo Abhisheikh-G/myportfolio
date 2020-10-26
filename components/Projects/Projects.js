@@ -49,7 +49,7 @@ function Project(props) {
       <Box
         component="img"
         height={200}
-        width={400}
+        width={365}
         src="bg.webp"
         alt="Project Photo"
       />
