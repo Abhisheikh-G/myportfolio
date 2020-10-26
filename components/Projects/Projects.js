@@ -59,7 +59,7 @@ function Project(props) {
         raised={false}
       >
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="div">
             Project
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -87,7 +87,12 @@ export default function Projects() {
     <React.Fragment>
       <Box id="mywork" className={classes.section}>
         <Container maxWidth="lg">
-          <Typography className={classes.title} variant="h3" gutterBottom>
+          <Typography
+            className={classes.title}
+            variant="h3"
+            variantMapping="h6"
+            gutterBottom
+          >
             My <span className={classes.highlight}>Work</span>
           </Typography>
           <Grid container justify="space-evenly" spacing={4}>

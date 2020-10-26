@@ -8,6 +8,8 @@ import Header from "../components/Header/Header";
 import { makeStyles } from "@material-ui/core/styles";
 import StickyFooter from "../components/Footer/Footer";
 import Box from "@material-ui/core/Box";
+import "fontsource-roboto";
+import theme from "../src/theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,6 +43,7 @@ export default function MyApp(props) {
           name="description"
           content="Hi, my name is Abhisheikh Gill. I am a full-stack web developer living in NJ, USA. I make applications use React.js, Node.js, Next.js, Gatsby.js, MongoDB, and PostgreSQL."
         />
+        <meta name="theme-color" content={theme.palette.secondary.main} />
         <meta charset="UTF-8" />
         <link rel="shortcut icon" href="favicon.ico" />
       </Head>

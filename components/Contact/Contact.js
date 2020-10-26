@@ -50,7 +50,12 @@ export default function Contact() {
     <React.Fragment>
       <Box id="contact" className={classes.section}>
         <Container maxWidth="lg">
-          <Typography className={classes.title} variant="h3" gutterBottom>
+          <Typography
+            className={classes.title}
+            variant="h3"
+            variantMapping="h6"
+            gutterBottom
+          >
             Interested In Working With Me? <br />
             <span className={classes.highlight}>Send Me A Message</span>
           </Typography>
