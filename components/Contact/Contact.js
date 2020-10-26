@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textfield: {
     width: "100%",
-    padding: theme.spacing(2),
+    margin: theme.spacing(1),
   },
   form: {
     display: "flex",
@@ -68,22 +68,25 @@ export default function Contact() {
             <TextField
               className={classes.textfield}
               type="text"
-              placeholder="Your Name"
-              name="Your Name"
+              label="Name"
+              name="name"
+              placeholder="Type your name here.."
               inputRef={register({ required: true, maxLength: 80 })}
             />
             <TextField
               className={classes.textfield}
               type="text"
-              placeholder="Email"
-              name="Email"
+              placeholder="Type your email here.."
+              name="email"
+              label="Email"
               inputRef={register({ required: true, pattern: /^\S+@\S+$/i })}
             />
             <TextField
               className={classes.textfield}
               multiline
-              name="Message"
-              placeholder="Your Message Here.."
+              name="message"
+              label="Message"
+              placeholder="Type your message here.."
               inputRef={register({ required: true, maxLength: 300 })}
             />
 

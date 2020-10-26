@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SkillBlock(props) {
   const classes = useStyles(props);
-  const { imgSrc, text } = props;
+  const { imgSrc, text, alt } = props;
   return (
     <Box
       display="flex"
@@ -80,7 +80,7 @@ function SkillBlock(props) {
       justifyContent="center"
       className={classes.skillBlock}
     >
-      <img src={imgSrc} className={classes.skillImg} />
+      <img src={imgSrc} className={classes.skillImg} alt={alt} />
       <Typography variant="h6" className={classes.skillText}>
         {text}
       </Typography>
@@ -110,6 +110,7 @@ export default function Skills(...props) {
                 text={"JavaScript"}
                 textColor="#000"
                 imgSrc="javascript.png"
+                alt="JavaScript logo"
               />
             </Grid>
             <Grid item>
@@ -119,6 +120,7 @@ export default function Skills(...props) {
                 text={"React.js"}
                 textColor="#fff"
                 imgSrc="react.svg"
+                alt="React.js logo"
               />
             </Grid>
 
@@ -129,6 +131,7 @@ export default function Skills(...props) {
                 text={"Node.js"}
                 textColor="#fff"
                 imgSrc="node.svg"
+                alt="Node.js logo"
               />
             </Grid>
             <Grid item>
@@ -138,6 +141,7 @@ export default function Skills(...props) {
                 text={"Gatsby.js"}
                 textColor="#fff"
                 imgSrc="gatsby.svg"
+                alt="Gatsby.js logo"
               />
             </Grid>
             <Grid item>
@@ -147,6 +151,7 @@ export default function Skills(...props) {
                 text={"Next.js"}
                 textColor="#000"
                 imgSrc="next.svg"
+                alt="Next.js logo"
               />
             </Grid>
             <Grid item>
@@ -156,6 +161,7 @@ export default function Skills(...props) {
                 text={"Git"}
                 textColor="#000"
                 imgSrc="git.png"
+                alt="Git logo"
               />
             </Grid>
             <Grid item>
@@ -165,6 +171,7 @@ export default function Skills(...props) {
                 text={"MongoDB"}
                 textColor="#000"
                 imgSrc="mongo.png"
+                alt="MongoDB logo"
               />
             </Grid>
             <Grid item>
@@ -174,6 +181,7 @@ export default function Skills(...props) {
                 text={"PostgreSQL"}
                 textColor="#fff"
                 imgSrc="postgresql.svg"
+                alt="PostgreSQL logo"
               />
             </Grid>
             <Grid item>
@@ -183,6 +191,7 @@ export default function Skills(...props) {
                 text={"Linux"}
                 textColor="#000"
                 imgSrc="tux.svg"
+                alt="Linux logo"
               />
             </Grid>
           </Grid>

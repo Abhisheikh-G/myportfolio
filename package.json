@@ -9,6 +9,7 @@
     "clsx": "latest",
     "fontsource-roboto": "^3.0.3",
     "next": "latest",
+    "next-pwa": "^3.1.5",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",

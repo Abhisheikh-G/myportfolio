@@ -8,6 +8,7 @@ import Header from "../components/Header/Header";
 import { makeStyles } from "@material-ui/core/styles";
 import StickyFooter from "../components/Footer/Footer";
 import Box from "@material-ui/core/Box";
+import OfflineSupport from "../components/OfflineSupport/OfflineSupport";
 import "fontsource-roboto";
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +43,30 @@ export default function MyApp(props) {
           name="description"
           content="Hi, my name is Abhisheikh Gill. I am a full-stack web developer living in NJ, USA. I make applications use React.js, Node.js, Next.js, Gatsby.js, MongoDB, and PostgreSQL."
         />
+        <link rel="manifest" href="manifest.json" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="portfolio" />
+        <meta name="apple-mobile-web-app-title" content="portfolio" />
+        <meta name="msapplication-navbutton-color" content="#ffea00" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta name="msapplication-starturl" content="/" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <link rel="icon" type="png" sizes="192x192" href="homescreen.png" />
+        <link
+          rel="apple-touch-icon"
+          type="png"
+          sizes="192x192"
+          href="homescreen.png"
+        />
         <meta name="theme-color" content={theme.palette.secondary.main} />
         <meta charset="UTF-8" />
         <link rel="shortcut icon" href="favicon.ico" />
@@ -50,6 +75,7 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Header />
+        <OfflineSupport />
         <Box className={classes.root}>
           <Component {...pageProps} />
         </Box>
