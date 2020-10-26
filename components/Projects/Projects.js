@@ -49,9 +49,8 @@ function Project(props) {
       <Box
         component="img"
         height={200}
-        width={matchesSM ? "100%" : 400}
+        width={400}
         src="bg.webp"
-        loading="lazy"
         alt="Project Photo"
       />
       <Card
