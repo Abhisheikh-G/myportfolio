@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     backgroundColor: theme.palette.common.white,
     zIndex: 10,
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
     margin: "auto",
     width: "100%",
     [theme.breakpoints.up("lg")]: {

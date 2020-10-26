@@ -20,10 +20,15 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2),
   },
   root: {
+    margin: "auto",
     borderRadius: 0,
     boxShadow: theme.shadows[0],
-    height: 160,
-    width: 320,
+    width: "100%",
+    height: "50%",
+    [theme.breakpoints.up("lg")]: {
+      width: "80%",
+      height: "40%",
+    },
   },
   title: {
     textAlign: "center",
@@ -39,21 +44,17 @@ function Project(props) {
   const { direction } = props;
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesLGup = useMediaQuery(theme.breakpoints.up("lg"));
   const classes = useStyles();
   return (
-    <Box
-      display="flex"
-      flexDirection={matchesSM ? "column" : direction}
-      width={matchesSM ? "100%" : "66%"}
-      margin="auto"
-      boxShadow={4}
-    >
+    <Box display="flex" flexDirection="column" margin="auto" boxShadow={4}>
       <Box
         component="img"
-        height={160}
-        width={320}
         src="bg.webp"
         alt="Project Photo"
+        m="auto"
+        width={matchesLGup ? "80%" : "100%"}
+        height={matchesLGup ? "40%" : "50%"}
       />
       <Card
         className={classes.root}
