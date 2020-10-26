@@ -4,14 +4,17 @@ import { makeStyles } from "@material-ui/core";
 import dynamic from "next/dynamic";
 
 const Projects = dynamic(() => import("../components/Projects/Projects"), {
+  ssr: false,
   loading: () => <p>...</p>,
 });
 
 const Contact = dynamic(() => import("../components/Contact/Contact"), {
+  ssr: false,
   loading: () => <p>...</p>,
 });
 
 const Skills = dynamic(() => import("../components/Skills/Skills"), {
+  ssr: false,
   loading: () => <p>...</p>,
 });
 
