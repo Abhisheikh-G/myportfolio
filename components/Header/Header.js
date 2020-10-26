@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.secondary.main}`,
   },
   logo: {
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(1),
     marginLeft: theme.spacing(6),
     height: 125,
     width: 125,
