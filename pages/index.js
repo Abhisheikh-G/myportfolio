@@ -18,11 +18,6 @@ const Skills = dynamic(() => import("../components/Skills/Skills"), {
   loading: () => <p>...</p>,
 });
 
-const DynamicComponentWithCustomLoading = dynamic(
-  () => import("../components/hello"),
-  { loading: () => <p>...</p> }
-);
-
 const useStyles = makeStyles((theme) => ({
   image: {
     objectFit: "cover",

@@ -53,7 +53,7 @@ export default function Contact() {
           <Typography
             className={classes.title}
             variant="h3"
-            variantMapping="h6"
+            component={"h6"}
             gutterBottom
           >
             Interested In Working With Me? <br />

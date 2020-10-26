@@ -48,9 +48,9 @@ function Project(props) {
     >
       <Box
         component="img"
-        height={300}
-        width={matchesSM ? "100%" : 250}
-        src="bg.jpg"
+        height={200}
+        width={matchesSM ? "100%" : 400}
+        src="bg.webp"
         loading="lazy"
         alt="Project Photo"
       />
@@ -91,7 +91,7 @@ export default function Projects() {
           <Typography
             className={classes.title}
             variant="h3"
-            variantMapping="h6"
+            component={"h6"}
             gutterBottom
           >
             My <span className={classes.highlight}>Work</span>
