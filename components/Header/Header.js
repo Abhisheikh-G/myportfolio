@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     margin: theme.spacing(2),
     cursor: "pointer",
+    position: "sticky",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -67,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     margin: theme.spacing(2),
+    marginLeft: theme.spacing(6),
     height: 125,
     width: 125,
   },
@@ -137,11 +139,12 @@ export default function Header(props) {
             classes={{ root: classes.toolbarBg }}
             disableGutters
           >
+            <img src="logo.svg" alt="logo" className={classes.logo} />
+
             <Hidden smDown>
-              <img src="logo.svg" alt="logo" className={classes.logo} />
               <Tabs
                 value={value}
-                style={{ width: 400, marginLeft: "auto" }}
+                style={{ marginLeft: "auto" }}
                 onChange={handleChange}
                 aria-label="simple tabs example"
               >

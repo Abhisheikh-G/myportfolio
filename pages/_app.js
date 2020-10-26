@@ -37,6 +37,12 @@ export default function MyApp(props) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta
+          name="description"
+          content="Hi, my name is Abhisheikh Gill. I am a full-stack web developer living in NJ, USA. I make applications use React.js, Node.js, Next.js, Gatsby.js, MongoDB, and PostgreSQL."
+        />
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="favicon.ico" />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
