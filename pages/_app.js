@@ -35,6 +35,7 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>Abhisheikh Gill | Portfolio</title>
+        <link rel="manifest" href="manifest.json" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -43,8 +44,6 @@ export default function MyApp(props) {
           name="description"
           content="Hi, my name is Abhisheikh Gill. I am a full-stack web developer living in NJ, USA. I make applications use React.js, Node.js, Next.js, Gatsby.js, MongoDB, and PostgreSQL."
         />
-        <link rel="manifest" href="/manifest.json" />
-
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="application-name" content="portfolio" />
@@ -59,7 +58,6 @@ export default function MyApp(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
         <link rel="icon" type="png" sizes="192x192" href="homescreen.png" />
         <link
           rel="apple-touch-icon"
@@ -81,6 +79,11 @@ export default function MyApp(props) {
         <meta
           property="og:image"
           content="https://abhisheikhgill.com/homescreen.png"
+        />
+        <meta
+          property="twitter:image"
+          content="https://abhisheikhgill.com/homescreen.png"
+        />
         />
       </Head>
       <ThemeProvider theme={theme}>
