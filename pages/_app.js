@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -6,10 +6,10 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/theme";
 import Header from "../components/Header/Header";
 import { makeStyles } from "@material-ui/core/styles";
-import StickyFooter from "../components/Footer/Footer";
 import Box from "@material-ui/core/Box";
 import OfflineSupport from "../components/OfflineSupport/OfflineSupport";
 import "fontsource-roboto";
+const StickyFooter = lazy(() => import("../components/Footer/Footer"));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +43,7 @@ export default function MyApp(props) {
           name="description"
           content="Hi, my name is Abhisheikh Gill. I am a full-stack web developer living in NJ, USA. I make applications use React.js, Node.js, Next.js, Gatsby.js, MongoDB, and PostgreSQL."
         />
-        <link rel="manifest" href="manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
 
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -70,6 +70,15 @@ export default function MyApp(props) {
         <meta name="theme-color" content={theme.palette.secondary.main} />
         <meta charset="UTF-8" />
         <link rel="shortcut icon" href="favicon.ico" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Abhisheikh Gill | Portfolio" />
+        <meta
+          property="og:description"
+          content="Hi, my name is Abhisheikh Gill. I am a full-stack web developer living in NJ, USA. I make applications use React.js, Node.js, Next.js, Gatsby.js, MongoDB, and PostgreSQL."
+        />
+        <meta property="og:site_name" content="Abhisheikh Gill | Portfolio" />
+        <meta property="og:url" content="https://abhisheikhgill.com" />
+        <meta property="og:image" content="homescreen.png" />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
