@@ -1,13 +1,10 @@
-import React from "react";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
+import React, { lazy, Suspense } from "react";
 import Hero from "../components/Hero/Hero";
-import Skills from "../components/Skills/Skills";
-import Link from "../src/Link";
-import { Grid, makeStyles } from "@material-ui/core";
-import Projects from "../components/Projects/Projects";
-import Contact from "../components/Contact/Contact";
+import { makeStyles } from "@material-ui/core";
+
+const Skills = lazy(() => import("../components/Skills/Skills"));
+const Projects = lazy(() => import("../components/Projects/Projects"));
+const Contact = lazy(() => import("../components/Contact/Contact"));
 
 const useStyles = makeStyles((theme) => ({
   image: {
