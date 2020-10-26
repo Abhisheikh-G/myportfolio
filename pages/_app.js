@@ -35,7 +35,7 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>Abhisheikh Gill | Portfolio</title>
-        <link rel="manifest" href="manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -83,7 +83,6 @@ export default function MyApp(props) {
         <meta
           property="twitter:image"
           content="https://abhisheikhgill.com/homescreen.png"
-        />
         />
       </Head>
       <ThemeProvider theme={theme}>
