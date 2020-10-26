@@ -6,18 +6,17 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Link from "../../src/Link";
 import Hidden from "@material-ui/core/Hidden";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import MenuIcon from "@material-ui/icons/Menu";
+import Button from "@material-ui/core/Button";
+import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
-
-const List = lazy(() => import("@material-ui/core/List"));
-const ListItem = lazy(() => import("@material-ui/core/ListItem"));
-const ListItemIcon = lazy(() => import("@material-ui/core/ListItemIcon"));
-const ListItemText = lazy(() => import("@material-ui/core/ListItemText"));
-const MailIcon = lazy(() => import("@material-ui/icons/Mail"));
-const WorkIcon = lazy(() => import("@material-ui/icons/Work"));
-
-const SwipeableDrawer = lazy(() => import("@material-ui/core/SwipeableDrawer"));
-
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
+import WorkIcon from "@material-ui/icons/Work";
 import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({

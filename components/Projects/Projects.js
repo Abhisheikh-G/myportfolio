@@ -51,6 +51,7 @@ function Project(props) {
         height={300}
         width={matchesSM ? "100%" : 250}
         src="bg.jpg"
+        loading="lazy"
         alt="Project Photo"
       />
       <Card

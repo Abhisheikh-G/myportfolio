@@ -1,12 +1,31 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
+import Hero from "../components/Hero/Hero";
+import Skills from "../components/Skills/Skills";
 import { makeStyles } from "@material-ui/core";
+import Projects from "../components/Projects/Projects";
+import Contact from "../components/Contact/Contact";
 
-const Hero = lazy(() => import("../components/Hero/Hero"));
-const Skills = lazy(() => import("../components/Skills/Skills"));
-const Projects = lazy(() => import("../components/Projects/Projects"));
-const Contact = lazy(() => import("../components/Contact/Contact"));
+const useStyles = makeStyles((theme) => ({
+  image: {
+    objectFit: "cover",
+    opacity: "0.4",
+  },
+  imageContainer: {
+    background: "#000",
+  },
+  section: {
+    minHeight: "100vh",
+    minWidth: "100%",
+  },
+  lightBg: {
+    backgroundColor: theme.palette.primary.light,
+    color: "#fff",
+  },
+}));
 
 export default function Index() {
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       <Hero />
