@@ -78,7 +78,10 @@ export default function MyApp(props) {
         />
         <meta property="og:site_name" content="Abhisheikh Gill | Portfolio" />
         <meta property="og:url" content="https://abhisheikhgill.com" />
-        <meta property="og:image" content="homescreen.png" />
+        <meta
+          property="og:image"
+          content="https://abhisheikhgill.com/homescreen.png"
+        />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
