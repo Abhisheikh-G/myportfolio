@@ -3,8 +3,7 @@
 # dependencies
 /node_modules
 
-/public/sw.js
-/public/sw.js.map
+
 
 # misc
 .DS_Store
