@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient( ${theme.palette.primary.dark},${theme.palette.primary.main})`,
     color: theme.palette.primary.contrastText,
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(6),
   },
   title: {
     textAlign: "center",

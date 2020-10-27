@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   section: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    opacity: 0,
   },
   root: {
     margin: "auto",
@@ -88,7 +89,7 @@ export default function Projects() {
 
   return (
     <React.Fragment>
-      <Box id="mywork" className={classes.section}>
+      <Box id="mywork" component="section" className={classes.section}>
         <Container maxWidth="lg">
           <Typography
             className={classes.title}

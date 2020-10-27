@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   section: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    opacity: 0,
   },
 
   title: {
@@ -48,7 +49,7 @@ export default function Contact() {
 
   return (
     <React.Fragment>
-      <Box id="contact" className={classes.section}>
+      <Box id="contact" component="section" className={classes.section}>
         <Container maxWidth="lg">
           <Typography
             className={classes.title}

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero/Hero";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Box } from "@material-ui/core";
 import dynamic from "next/dynamic";
 import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
@@ -22,32 +22,54 @@ import Skills from "../components/Skills/Skills";
 // });
 
 const useStyles = makeStyles((theme) => ({
-  image: {
-    objectFit: "cover",
-    opacity: "0.4",
+  active: {
+    opacity: 1,
+    marginTop: theme.spacing(2),
+    transition: "all .7s ease-in-out",
   },
-  imageContainer: {
-    background: "#000",
-  },
-  section: {
-    minHeight: "100vh",
-    minWidth: "100%",
-  },
-  lightBg: {
-    backgroundColor: theme.palette.primary.light,
-    color: "#fff",
+  inactive: {
+    opacity: 0,
   },
 }));
 
 export default function Index() {
   const classes = useStyles();
 
+  let options = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(isTouching, options);
+
+    window.document
+      .querySelectorAll(".container section")
+      .forEach((section) => {
+        observer.observe(section);
+      });
+
+    function isTouching(entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.className = " " + classes.active;
+          console.log(entry.target);
+        } else {
+          entry.target.className = "";
+          entry.target.className = " " + classes.inactive;
+        }
+      });
+    }
+  }, []);
+
   return (
     <React.Fragment>
-      <Hero />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Box className="container">
+        <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
+      </Box>
     </React.Fragment>
   );
 }

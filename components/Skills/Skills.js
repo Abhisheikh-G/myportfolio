@@ -1,22 +1,11 @@
 import {
   Box,
-  colors,
   Container,
-  Divider,
   Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import {
-  blue,
-  green,
-  grey,
-  lightBlue,
-  lightGreen,
-  purple,
-  yellow,
-} from "@material-ui/core/colors";
-import clsx from "clsx";
+import { skillData } from "./skillData";
 import React from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    opacity: 0,
   },
   skillBlock: {
     margin: theme.spacing(2),
@@ -90,105 +80,27 @@ function SkillBlock(props) {
 
 export default function Skills(...props) {
   const classes = useStyles(props);
+
   return (
     <React.Fragment>
-      <Box className={classes.section}>
+      <Box className={classes.section} component="section">
         <Container maxWidth="lg">
           <Typography className={classes.title} variant="h3" gutterBottom>
             My <span className={classes.highlight}>Skills</span>
           </Typography>
           <Grid container justify="space-evenly">
-            <Grid item>
-              <SkillBlock
-                color={yellow[600]}
-                hover={yellow[400]}
-                text={"JavaScript"}
-                textColor="#000"
-                imgSrc="javascript.png"
-                alt="JavaScript logo"
-              />
-            </Grid>
-            <Grid item>
-              <SkillBlock
-                color={blue[900]}
-                hover={blue[800]}
-                text={"React.js"}
-                textColor="#fff"
-                imgSrc="react.svg"
-                alt="React.js logo"
-              />
-            </Grid>
-
-            <Grid item>
-              <SkillBlock
-                color={green[900]}
-                hover={green[800]}
-                text={"Node.js"}
-                textColor="#fff"
-                imgSrc="node.svg"
-                alt="Node.js logo"
-              />
-            </Grid>
-            <Grid item>
-              <SkillBlock
-                color={purple[500]}
-                hover={purple[400]}
-                text={"Gatsby.js"}
-                textColor="#fff"
-                imgSrc="gatsby.svg"
-                alt="Gatsby.js logo"
-              />
-            </Grid>
-            <Grid item>
-              <SkillBlock
-                color={grey[400]}
-                hover={grey[200]}
-                text={"Next.js"}
-                textColor="#000"
-                imgSrc="next.svg"
-                alt="Next.js logo"
-              />
-            </Grid>
-            <Grid item>
-              <SkillBlock
-                color="#fff"
-                hover={grey[400]}
-                text={"Git"}
-                textColor="#000"
-                imgSrc="git.png"
-                alt="Git logo"
-              />
-            </Grid>
-            <Grid item>
-              <SkillBlock
-                color={green[400]}
-                hover={green[300]}
-                text={"MongoDB"}
-                textColor="#000"
-                imgSrc="mongo.png"
-                alt="MongoDB logo"
-              />
-            </Grid>
-            <Grid item>
-              <SkillBlock
-                color={lightBlue[900]}
-                hover={lightBlue[800]}
-                text={"PostgreSQL"}
-                textColor="#fff"
-                imgSrc="postgresql.svg"
-                alt="PostgreSQL logo"
-              />
-            </Grid>
-            <Grid item>
-              <SkillBlock
-                color="#fff"
-                hover={grey[400]}
-                text={"Linux"}
-                textColor="#000"
-                imgSrc="tux.svg"
-                alt="Linux logo"
-              />
-            </Grid>
+            {skillData.map((skill) => (
+              <Grid item>
+                <SkillBlock
+                  color={skill.color}
+                  hover={skill.hover}
+                  text={skill.text}
+                  textColor={skill.textColor}
+                  imgSrc={skill.imgSrc}
+                  alt={skill.alt}
+                />
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </Box>
