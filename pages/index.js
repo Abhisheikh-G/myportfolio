@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   inactive: {
     opacity: 0,
+    transition: "all .7s ease-in-out",
   },
 }));
 
