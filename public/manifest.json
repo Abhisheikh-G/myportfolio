@@ -1,6 +1,11 @@
 {
     "short_name": "A. Gill | Portfolio",
     "name": "Abhisheikh Gill | Portfolio",
+    "scope": "/",
+    "start_url": "/?source=pwa",
+    "display": "standalone",
+    "theme_color": "#ffea00",
+    "background_color": "#000",
     "icons": [
       {
         "src": "favicon-192x192.ico",
@@ -19,9 +24,5 @@
         "purpose": "any maskable"
       }
     
-    ],
-    "start_url": "/",
-    "display": "standalone",
-    "theme_color": "#ffea00",
-    "background_color": "#000"
+    ]
   }
