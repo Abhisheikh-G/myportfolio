@@ -118,7 +118,7 @@ export default function Projects(props) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(process.env.API_URL + "skillData.js");
+  const res = await fetch("https://agill-portfolio.herokuapp.com/skillData.js");
   const skills = await res.json();
 
   return {
