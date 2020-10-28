@@ -7,7 +7,7 @@ import {
   yellow,
 } from "@material-ui/core/colors";
 
-const API_URL = process.env.API_URL + "photo";
+const API_URL = process.env.API_URL + "photos";
 
 export const skillData = [
   {
