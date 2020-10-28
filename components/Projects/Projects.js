@@ -12,7 +12,15 @@ import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import React from "react";
+import React, { useEffect } from "react";
+import {
+  blue,
+  green,
+  grey,
+  lightBlue,
+  purple,
+  yellow,
+} from "@material-ui/core/colors";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -86,9 +94,24 @@ function Project(props) {
   );
 }
 
-export default function Projects({ skills }) {
+export default function Projects({ projects }) {
   const classes = useStyles();
-  console.log("Are there any props?:", skills);
+  const [projects, setProjects] = useState([]);
+  console.log("Are there any props?:", projects);
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
+  async function getProjects() {
+    const res = await fetch(
+      "https://agill-portfolio.herokuapp.com/projects.json"
+    );
+    const data = await res.json();
+
+    setProjects(data);
+    console.log("Projects:", projects);
+  }
   return (
     <React.Fragment>
       <Box id="mywork" component="section" className={classes.section}>
@@ -119,11 +142,13 @@ export default function Projects({ skills }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch("https://agill-portfolio.herokuapp.com/skillData.js");
-  const skills = await res.json();
+  const res = await fetch(
+    "https://agill-portfolio.herokuapp.com/projects.json"
+  );
+  const projects = await res.json();
   return {
     props: {
-      skills,
+      projects,
     },
   };
 }
