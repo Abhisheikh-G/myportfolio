@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Project(props) {
   const { direction } = props;
+  console.log("Props inside Project", props);
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesLGup = useMediaQuery(theme.breakpoints.up("lg"));
