@@ -87,7 +87,7 @@ function Project(props) {
 
 export default function Projects(props) {
   const classes = useStyles();
-  console.log(props);
+  console.log("Are there any props?:", props);
   return (
     <React.Fragment>
       <Box id="mywork" component="section" className={classes.section}>
