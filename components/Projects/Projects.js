@@ -86,9 +86,9 @@ function Project(props) {
   );
 }
 
-export default function Projects(props) {
+export default function Projects({ skills }) {
   const classes = useStyles();
-  console.log("Are there any props?:", props);
+  console.log("Are there any props?:", skills);
   return (
     <React.Fragment>
       <Box id="mywork" component="section" className={classes.section}>
@@ -121,7 +121,6 @@ export default function Projects(props) {
 export async function getStaticProps(context) {
   const res = await fetch("https://agill-portfolio.herokuapp.com/skillData.js");
   const skills = await res.json();
-
   return {
     props: {
       skills,
