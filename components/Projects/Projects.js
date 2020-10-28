@@ -119,11 +119,11 @@ export default function Projects(props) {
 
 export async function getStaticProps(context) {
   const res = await fetch(process.env.API_URL + "skillData.js");
-  const data = await JSON.parse(res);
+  const skills = await res.json();
 
   return {
     props: {
-      data,
+      skills,
     },
   };
 }
