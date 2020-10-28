@@ -37,9 +37,9 @@ export const skillData = [
   {
     color: purple[500],
     hover: purple[400],
-    text: `${API_URL}/Gatsby.js`,
+    text: `Gatsby.js`,
     textColor: "#fff",
-    imgSrc: "gatsby.svg",
+    imgSrc: `${API_URL}/gatsby.svg`,
     alt: "Gatsby.js logo",
   },
   {
