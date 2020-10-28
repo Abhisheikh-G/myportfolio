@@ -2,7 +2,7 @@
     "short_name": "A. Gill | Portfolio",
     "name": "Abhisheikh Gill | Portfolio",
     "scope": "/",
-    "start_url": "/?source=pwa",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#ffea00",
     "background_color": "#000",

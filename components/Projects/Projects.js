@@ -13,6 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -84,9 +85,9 @@ function Project(props) {
   );
 }
 
-export default function Projects() {
+export default function Projects(props) {
   const classes = useStyles();
-
+  console.log(props);
   return (
     <React.Fragment>
       <Box id="mywork" component="section" className={classes.section}>
@@ -114,4 +115,15 @@ export default function Projects() {
       </Box>
     </React.Fragment>
   );
+}
+
+export async function getStaticProps(context) {
+  const res = await fetch(process.env.API_URL + "skillData.js");
+  const data = await JSON.parse(res);
+
+  return {
+    props: {
+      data,
+    },
+  };
 }

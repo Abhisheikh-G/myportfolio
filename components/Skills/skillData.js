@@ -7,13 +7,15 @@ import {
   yellow,
 } from "@material-ui/core/colors";
 
+const API_URL = process.env.API_URL + "photo";
+
 export const skillData = [
   {
     color: yellow[600],
     hover: yellow[400],
     text: "JavaScript",
     textColor: "#000",
-    imgSrc: "javascript.png",
+    imgSrc: `${API_URL}/javascript.png`,
     alt: "JavaScript logo",
   },
   {
@@ -21,7 +23,7 @@ export const skillData = [
     hover: blue[800],
     text: "React.js",
     textColor: "#fff",
-    imgSrc: "react.svg",
+    imgSrc: `${API_URL}/react.svg`,
     alt: "React.js logo",
   },
   {
@@ -29,13 +31,13 @@ export const skillData = [
     hover: green[800],
     text: "Node.js",
     textColor: "#fff",
-    imgSrc: "node.svg",
+    imgSrc: `${API_URL}/node.svg`,
     alt: "Node.js logo",
   },
   {
     color: purple[500],
     hover: purple[400],
-    text: "Gatsby.js",
+    text: `${API_URL}/Gatsby.js`,
     textColor: "#fff",
     imgSrc: "gatsby.svg",
     alt: "Gatsby.js logo",
@@ -45,7 +47,7 @@ export const skillData = [
     hover: grey[200],
     text: "Next.js",
     textColor: "#000",
-    imgSrc: "next.svg",
+    imgSrc: `${API_URL}/next.svg`,
     alt: "Next.js logo",
   },
   {
@@ -53,7 +55,7 @@ export const skillData = [
     hover: grey[400],
     text: "Git",
     textColor: "#000",
-    imgSrc: "git.png",
+    imgSrc: `${API_URL}/git.png`,
     alt: "Git logo",
   },
   {
@@ -61,7 +63,7 @@ export const skillData = [
     hover: green[300],
     text: "MongoDB",
     textColor: "#000",
-    imgSrc: "mongo.png",
+    imgSrc: `${API_URL}/mongo.png`,
     alt: "MongoDB logo",
   },
   {
@@ -69,7 +71,7 @@ export const skillData = [
     hover: lightBlue[800],
     text: "PostgreSQL",
     textColor: "#fff",
-    imgSrc: "postgresql.svg",
+    imgSrc: `${API_URL}/postgresql.svg`,
     alt: "PostgreSQL logo",
   },
   {
@@ -77,7 +79,7 @@ export const skillData = [
     hover: grey[400],
     text: "Linux",
     textColor: "#000",
-    imgSrc: "tux.svg",
+    imgSrc: `${API_URL}/tux.svg`,
     alt: "Linux logo",
   },
 ];
