@@ -100,7 +100,8 @@ function Project(props) {
             <Button
               size="small"
               color="primary"
-              component="link"
+              component="a"
+              target="_blank"
               href={projectLink}
               style={{ textDecoration: "none" }}
             >
