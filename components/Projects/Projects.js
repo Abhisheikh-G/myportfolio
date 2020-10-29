@@ -75,8 +75,8 @@ function Project(props) {
         src={`${process.env.API_URL}/photos/${image}`}
         alt="Project Photo"
         m="auto"
-        width={"100%"}
-        height={"50%"}
+        width={matchesLGup ? "80%" : "100%"}
+        height={matchesLGup ? "40%" : "50%"}
       />
       <Card
         className={classes.root}

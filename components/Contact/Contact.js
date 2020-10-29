@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     width: "100%",
     [theme.breakpoints.up("lg")]: {
-      width: "85%",
+      width: "80%",
     },
   },
 }));
