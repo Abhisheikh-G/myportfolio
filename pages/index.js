@@ -6,21 +6,6 @@ import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
 import Skills from "../components/Skills/Skills";
 
-// const Projects = dynamic(() => import("../components/Projects/Projects"), {
-//   ssr: false,
-//   loading: () => <p>...</p>,
-// });
-
-// const Contact = dynamic(() => import("../components/Contact/Contact"), {
-//   ssr: false,
-//   loading: () => <p>...</p>,
-// });
-
-// const Skills = dynamic(() => import("../components/Skills/Skills"), {
-//   ssr: false,
-//   loading: () => <p>...</p>,
-// });
-
 const useStyles = makeStyles((theme) => ({
   active: {
     opacity: 1,
@@ -33,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Index() {
+export default function Index({ projects }) {
   const classes = useStyles();
+  console.log("Index props: ", projects);
 
   let options = {
     root: null,
@@ -68,9 +54,21 @@ export default function Index() {
       <Box className="container">
         <Hero />
         <Skills />
-        <Projects />
+        <Projects projects={projects} />
         <Contact />
       </Box>
     </React.Fragment>
   );
+}
+
+export async function getStaticProps(context) {
+  let res = await fetch("https://agill-portfolio.herokuapp.com/projects.json");
+  let data = await res.json();
+  const { projects } = data;
+
+  return {
+    props: {
+      projects,
+    },
+  };
 }

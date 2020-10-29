@@ -5,6 +5,7 @@ import {
   useTheme,
   useMediaQuery,
   Divider,
+  Icon,
 } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -12,7 +13,11 @@ import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import React, { useEffect } from "react";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import IconButton from "@material-ui/core/IconButton";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import Collapse from "@material-ui/core/Collapse";
+import React, { useState } from "react";
 import {
   blue,
   green,
@@ -51,17 +56,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Project(props) {
-  const { direction } = props;
-  console.log("Props inside Project", props);
+  const { title, description, work, image } = props;
+  const [expanded, setExpanded] = useState(false);
+
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesLGup = useMediaQuery(theme.breakpoints.up("lg"));
   const classes = useStyles();
+
+  function handleExpand() {
+    setExpanded(!expanded);
+  }
+
   return (
     <Box display="flex" flexDirection="column" margin="auto" boxShadow={4}>
       <Box
         component="img"
-        src="bg.webp"
+        src={`${process.env.API_URL}/photos/${image}`}
         alt="Project Photo"
         m="auto"
         width={matchesLGup ? "80%" : "100%"}
@@ -74,21 +85,36 @@ function Project(props) {
       >
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Project
+            {title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography variant="body1" color="textSecondary" component="p">
+            {description}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
+
+        <CardActions
+          style={{ display: "flex", justifyContent: "space-between" }}
+          disableSpacing
+        >
+          <div>
+            <Button size="small" color="primary">
+              Share
+            </Button>
+            <Button size="small" color="primary">
+              Learn More
+            </Button>
+          </div>
+          <IconButton onClick={handleExpand} component={Box} mr={2}>
+            {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          </IconButton>
         </CardActions>
+
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>More Details:</Typography>
+            <Typography paragraph>{work}</Typography>
+          </CardContent>
+        </Collapse>
       </Card>
     </Box>
   );
@@ -96,22 +122,7 @@ function Project(props) {
 
 export default function Projects({ projects }) {
   const classes = useStyles();
-  const [projects, setProjects] = useState([]);
-  console.log("Are there any props?:", projects);
 
-  useEffect(() => {
-    getProjects();
-  }, []);
-
-  async function getProjects() {
-    const res = await fetch(
-      "https://agill-portfolio.herokuapp.com/projects.json"
-    );
-    const data = await res.json();
-
-    setProjects(data);
-    console.log("Projects:", projects);
-  }
   return (
     <React.Fragment>
       <Box id="mywork" component="section" className={classes.section}>
@@ -125,30 +136,19 @@ export default function Projects({ projects }) {
             My <span className={classes.highlight}>Work</span>
           </Typography>
           <Grid container justify="space-evenly" spacing={4}>
-            <Grid item>
-              <Project />
-            </Grid>
-            <Grid item>
-              <Project direction="row-reverse" />
-            </Grid>
-            <Grid item>
-              <Project />
-            </Grid>
+            {projects.map((project) => (
+              <Grid item>
+                <Project
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  work={project.work}
+                />
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </Box>
     </React.Fragment>
   );
-}
-
-export async function getStaticProps(context) {
-  const res = await fetch(
-    "https://agill-portfolio.herokuapp.com/projects.json"
-  );
-  const projects = await res.json();
-  return {
-    props: {
-      projects,
-    },
-  };
 }

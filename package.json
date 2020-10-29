@@ -10,6 +10,7 @@
     "clsx": "latest",
     "fontsource-roboto": "^3.0.3",
     "next": "^10.0.0",
+    "next-env": "^1.1.1",
     "next-pwa": "^3.1.5",
     "prop-types": "latest",
     "react": "latest",

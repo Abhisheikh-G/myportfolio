@@ -5,3 +5,9 @@ module.exports = withPWA({
     dest: "public",
   },
 });
+
+module.exports = {
+  env: {
+    API_URL: "https://agill-portfolio.herokuapp.com",
+  },
+};
