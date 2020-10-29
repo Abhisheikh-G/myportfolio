@@ -155,6 +155,7 @@ export default function Projects({ projects }) {
                   description={project.description}
                   image={project.image}
                   work={project.work}
+                  projectLink={project.projectLink}
                 />
               </Grid>
             ))}
