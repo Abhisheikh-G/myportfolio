@@ -105,6 +105,7 @@ export default function Header(props) {
           href="#contact"
           button
           key={"contact"}
+          onClick={() => setOpen(!open)}
         >
           <ListItemIcon>
             <MailIcon className={classes.drawerIcon} />
@@ -120,6 +121,7 @@ export default function Header(props) {
           href="#mywork"
           button
           key={"mywork"}
+          onClick={() => setOpen(!open)}
         >
           <ListItemIcon>
             <WorkIcon className={classes.drawerIcon} />
