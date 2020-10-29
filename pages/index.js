@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
 import Skills from "../components/Skills/Skills";
-import dynamic from "next/dynamic";
 
 const Fade = dynamic(() => import("@material-ui/core/Fade"));
 
