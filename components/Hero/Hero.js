@@ -10,6 +10,9 @@ import {
 import PillButton from "../PillButton/PillButton";
 import React from "react";
 import Link from "../../src/Link";
+import dynamic from "next/dynamic";
+
+const Fade = dynamic(() => import("@material-ui/core/Fade"));
 
 const useStyles = makeStyles((theme) => ({
   highlight: {
@@ -49,10 +52,12 @@ export default function Hero() {
     <React.Fragment>
       <Box className={classes.content}>
         <Container maxWidth="lg">
-          <Typography className={classes.title} variant="h2" gutterBottom>
-            Looking For A <br />
-            <span className={classes.highlight}>Web Developer?</span>
-          </Typography>
+          <Fade in={true}>
+            <Typography className={classes.title} variant="h2" gutterBottom>
+              Looking For A <br />
+              <span className={classes.highlight}>Web Developer?</span>
+            </Typography>
+          </Fade>
           <Typography variant="h3" gutterBottom={true} align="center">
             Hi, I'm <span className={classes.highlight}>Abhisheikh Gill.</span>
           </Typography>

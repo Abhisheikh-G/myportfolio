@@ -6,8 +6,6 @@ import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
 import Skills from "../components/Skills/Skills";
 
-const Fade = dynamic(() => import("@material-ui/core/Fade"));
-
 const useStyles = makeStyles((theme) => ({
   active: {
     opacity: 1,
@@ -54,9 +52,7 @@ export default function Index({ projects }) {
   return (
     <React.Fragment>
       <Box className="container">
-        <Fade in={true}>
-          <Hero />
-        </Fade>
+        <Hero />
         <Skills />
         <Projects projects={projects} />
         <Contact />
