@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Project(props) {
-  const { title, description, work, image } = props;
+  const { title, description, work, image, projectLink } = props;
   const [expanded, setExpanded] = useState(false);
 
   const theme = useTheme();
@@ -97,14 +97,25 @@ function Project(props) {
           disableSpacing
         >
           <div>
-            <Button size="small" color="primary">
-              Share
+            <Button
+              size="small"
+              color="primary"
+              component="link"
+              href={projectLink}
+              style={{ textDecoration: "none" }}
+            >
+              Visit The Site
             </Button>
-            <Button size="small" color="primary">
+            <Button onClick={handleExpand} size="small" color="primary">
               Learn More
             </Button>
           </div>
-          <IconButton onClick={handleExpand} component={Box} mr={2}>
+          <IconButton
+            aria-label="expand icon"
+            onClick={handleExpand}
+            component={Box}
+            mr={2}
+          >
             {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </IconButton>
         </CardActions>
