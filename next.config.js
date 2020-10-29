@@ -8,6 +8,6 @@ module.exports = withPWA({
 
 module.exports = {
   env: {
-    API_URL: "https://agill-portfolio.herokuapp.com",
+    API_URL: "https://agill-portfolio.herokuapp.com/",
   },
 };
