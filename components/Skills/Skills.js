@@ -70,7 +70,13 @@ function SkillBlock(props) {
       justifyContent="center"
       className={classes.skillBlock}
     >
-      <img src={imgSrc} className={classes.skillImg} alt={alt} />
+      <img
+        src={imgSrc}
+        height={72}
+        width={72}
+        className={classes.skillImg}
+        alt={alt}
+      />
       <Typography variant="h6" className={classes.skillText}>
         {text}
       </Typography>

@@ -102,6 +102,7 @@ function Project(props) {
               color="primary"
               component="a"
               target="_blank"
+              rel="noopener"
               href={projectLink}
               style={{ textDecoration: "none" }}
             >
