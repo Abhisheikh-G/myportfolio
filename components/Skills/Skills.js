@@ -91,7 +91,12 @@ export default function Skills(...props) {
     <React.Fragment>
       <Box className={classes.section} component="section">
         <Container maxWidth="lg">
-          <Typography className={classes.title} variant="h3" gutterBottom>
+          <Typography
+            className={classes.title}
+            variant="h3"
+            component={"h6"}
+            gutterBottom
+          >
             My <span className={classes.highlight}>Skills</span>
           </Typography>
           <Grid container justify="space-evenly">
