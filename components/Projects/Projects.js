@@ -6,6 +6,7 @@ import {
   useMediaQuery,
   Divider,
   Icon,
+  CardMedia,
 } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -17,6 +18,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import IconButton from "@material-ui/core/IconButton";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import Collapse from "@material-ui/core/Collapse";
+import Image from "next/image";
 import React, { useState } from "react";
 import {
   blue,
@@ -40,10 +42,26 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[0],
     width: "100%",
     height: "50%",
+    // [theme.breakpoints.up("sm")]: {
+    //   width: 400,
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   width: 500,
+    // },
+    [theme.breakpoints.up("md")]: {
+      // width: 700,
+      width: "90%",
+      height: "45%",
+    },
     [theme.breakpoints.up("lg")]: {
+      // width: 700,
       width: "80%",
       height: "40%",
     },
+  },
+  image: {
+    height: "50%",
+    width: "100%",
   },
   title: {
     textAlign: "center",
@@ -70,19 +88,20 @@ function Project(props) {
 
   return (
     <Box display="flex" flexDirection="column" margin="auto" boxShadow={4}>
-      <Box
-        component="img"
-        src={`${process.env.API_URL}/photos/${image}`}
-        alt="Project Photo"
-        m="auto"
-        width={matchesLGup ? "80%" : "100%"}
-        height={matchesLGup ? "40%" : "50%"}
-      />
       <Card
         className={classes.root}
         classes={{ root: classes.root }}
         raised={false}
       >
+        <CardMedia>
+          <Image
+            unsized
+            quality={100}
+            src={`/${image}`}
+            alt="Project Photo"
+            className={classes.image}
+          />
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
@@ -150,7 +169,7 @@ export default function Projects({ projects }) {
           </Typography>
           <Grid container justify="space-evenly" spacing={4}>
             {projects.map((project) => (
-              <Grid item>
+              <Grid item key={project.title}>
                 <Project
                   title={project.title}
                   description={project.description}

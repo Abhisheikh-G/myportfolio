@@ -7,15 +7,13 @@ import {
   yellow,
 } from "@material-ui/core/colors";
 
-const API_URL = process.env.API_URL + "photos";
-
 export const skillData = [
   {
     color: yellow[600],
     hover: yellow[400],
     text: "JavaScript",
     textColor: "#000",
-    imgSrc: `${API_URL}/javascript.png`,
+    imgSrc: `/javascript.png`,
     alt: "JavaScript logo",
   },
   {
@@ -23,7 +21,7 @@ export const skillData = [
     hover: blue[800],
     text: "React.js",
     textColor: "#fff",
-    imgSrc: `${API_URL}/react.svg`,
+    imgSrc: `/react.svg`,
     alt: "React.js logo",
   },
   {
@@ -31,7 +29,7 @@ export const skillData = [
     hover: green[800],
     text: "Node.js",
     textColor: "#fff",
-    imgSrc: `${API_URL}/node.svg`,
+    imgSrc: `/node.svg`,
     alt: "Node.js logo",
   },
   {
@@ -39,7 +37,7 @@ export const skillData = [
     hover: purple[400],
     text: `Gatsby.js`,
     textColor: "#fff",
-    imgSrc: `${API_URL}/gatsby.svg`,
+    imgSrc: `/gatsby.svg`,
     alt: "Gatsby.js logo",
   },
   {
@@ -47,7 +45,7 @@ export const skillData = [
     hover: grey[200],
     text: "Next.js",
     textColor: "#000",
-    imgSrc: `${API_URL}/next.svg`,
+    imgSrc: `/next.svg`,
     alt: "Next.js logo",
   },
   {
@@ -55,7 +53,7 @@ export const skillData = [
     hover: grey[400],
     text: "Git",
     textColor: "#000",
-    imgSrc: `${API_URL}/git.png`,
+    imgSrc: `/git.png`,
     alt: "Git logo",
   },
   {
@@ -63,7 +61,7 @@ export const skillData = [
     hover: green[300],
     text: "MongoDB",
     textColor: "#000",
-    imgSrc: `${API_URL}/mongo.png`,
+    imgSrc: `/mongo.png`,
     alt: "MongoDB logo",
   },
   {
@@ -71,7 +69,7 @@ export const skillData = [
     hover: lightBlue[800],
     text: "PostgreSQL",
     textColor: "#fff",
-    imgSrc: `${API_URL}/postgresql.svg`,
+    imgSrc: `/postgresql.svg`,
     alt: "PostgreSQL logo",
   },
   {
@@ -79,7 +77,7 @@ export const skillData = [
     hover: grey[400],
     text: "Linux",
     textColor: "#000",
-    imgSrc: `${API_URL}/tux.svg`,
+    imgSrc: `/tux.svg`,
     alt: "Linux logo",
   },
 ];

@@ -62,7 +62,12 @@ export default function Hero() {
             Hi, I'm <span className={classes.highlight}>Abhisheikh Gill.</span>
           </Typography>
           <Container maxWidth="md">
-            <Typography variant="h5" gutterBottom={true} align="center">
+            <Typography
+              variant="h5"
+              component={"p"}
+              gutterBottom={true}
+              align="center"
+            >
               Nice to meet you, I'm a{" "}
               <span className={classes.highlight}>
                 full stack web developer

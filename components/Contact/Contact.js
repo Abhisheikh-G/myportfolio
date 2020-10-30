@@ -68,7 +68,7 @@ export default function Contact() {
             onSubmit={handleSubmit(onSubmit)}
           >
             <FormLabel
-              for="name"
+              htmlFor="name"
               className={classes.textfield}
               required
               focused
@@ -85,7 +85,7 @@ export default function Contact() {
             />
 
             <FormLabel
-              for="email"
+              htmlFor="email"
               className={classes.textfield}
               focused
               required
@@ -101,7 +101,7 @@ export default function Contact() {
               inputRef={register({ required: true, pattern: /^\S+@\S+$/i })}
             />
             <FormLabel
-              for="message"
+              htmlFor="message"
               className={classes.textfield}
               focused
               required

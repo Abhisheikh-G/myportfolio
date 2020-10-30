@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { skillData } from "./skillData";
+import Image from "next/image";
 import React from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -70,7 +71,7 @@ function SkillBlock(props) {
       justifyContent="center"
       className={classes.skillBlock}
     >
-      <img
+      <Image
         src={imgSrc}
         height={72}
         width={72}
@@ -101,7 +102,7 @@ export default function Skills(...props) {
           </Typography>
           <Grid container justify="space-evenly">
             {skillData.map((skill) => (
-              <Grid item>
+              <Grid item key={skill.text}>
                 <SkillBlock
                   color={skill.color}
                   hover={skill.hover}
