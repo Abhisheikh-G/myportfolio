@@ -95,7 +95,7 @@ export default function Header(props) {
           <Image
             unsized
             style={{ margin: "auto" }}
-            src="logo.svg"
+            src="/logo.svg"
             alt="logo"
             className={classes.logo}
           />
@@ -143,8 +143,12 @@ export default function Header(props) {
             classes={{ root: classes.toolbarBg }}
             disableGutters
           >
-            <img src="logo.svg" alt="logo" className={classes.logo} />
-
+            <Image
+              unsized
+              src="/logo.svg"
+              alt="logo"
+              className={classes.logo}
+            />
             <Hidden smDown>
               <Tabs
                 value={value}
