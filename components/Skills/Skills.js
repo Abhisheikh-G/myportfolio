@@ -71,7 +71,7 @@ function SkillBlock(props) {
       className={classes.skillBlock}
     >
       <Image
-        src={imgSrc}
+        src={`${process.env.NEXT_PUBLIC_API_URL}/photos/${imgSrc}`}
         height={72}
         width={72}
         className={classes.skillImg}

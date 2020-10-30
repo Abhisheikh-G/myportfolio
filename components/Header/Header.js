@@ -144,7 +144,7 @@ export default function Header(props) {
             classes={{ root: classes.toolbarBg }}
             disableGutters
           >
-            <Box ml={6}>
+            <Box ml={4} mt={1}>
               <Image
                 priority
                 src="/logo.svg"

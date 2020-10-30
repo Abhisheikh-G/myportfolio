@@ -97,7 +97,7 @@ function Project(props) {
           <Image
             unsized
             quality={100}
-            src={`/${image}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/photos/${image}`}
             alt="Project Photo"
             className={classes.image}
           />
