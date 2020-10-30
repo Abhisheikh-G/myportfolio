@@ -72,7 +72,7 @@ function SkillBlock(props) {
       className={classes.skillBlock}
     >
       <Image
-        src={`${API_URL}/photos/${imgSrc}`}
+        src={`/${imgSrc}`}
         height={72}
         width={72}
         className={classes.skillImg}

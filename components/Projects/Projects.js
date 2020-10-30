@@ -87,7 +87,7 @@ function Project(props) {
           <Image
             unsized
             quality={100}
-            src={`${API_URL}/photos/${image}`}
+            src={`/${image}`}
             alt="Project Photo"
             className={classes.image}
           />
