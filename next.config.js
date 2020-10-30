@@ -4,10 +4,6 @@ module.exports = withPWA({
   pwa: {
     dest: "public",
   },
-});
-
-module.exports = {
-  ENV_CONFIG,
   images: {
     domains: [
       "https://agill-portfolio.herokuapp.com/",
@@ -15,4 +11,4 @@ module.exports = {
       "https://agill-portfolio.herokuapp.com/photos",
     ],
   },
-};
+});
