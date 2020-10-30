@@ -4,8 +4,6 @@ import {
   Container,
   useTheme,
   useMediaQuery,
-  Divider,
-  Icon,
   CardMedia,
 } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
@@ -20,15 +18,7 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import Collapse from "@material-ui/core/Collapse";
 import Image from "next/image";
 import React, { useState } from "react";
-import {
-  blue,
-  green,
-  grey,
-  lightBlue,
-  purple,
-  yellow,
-} from "@material-ui/core/colors";
-import axios from "axios";
+import { API_URL } from "../Helper";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -97,7 +87,7 @@ function Project(props) {
           <Image
             unsized
             quality={100}
-            src={`${process.env.NEXT_PUBLIC_API_URL}/photos/${image}`}
+            src={`${API_URL}/photos/${image}`}
             alt="Project Photo"
             className={classes.image}
           />

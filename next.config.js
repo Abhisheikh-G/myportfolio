@@ -6,14 +6,6 @@ module.exports = withPWA({
   },
 });
 
-const IMAGE_CONFIG = {};
-
-const ENV_CONFIG = {
-  env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-  },
-};
-
 module.exports = {
   ENV_CONFIG,
   images: {

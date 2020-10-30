@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import Image from "next/image";
 import React from "react";
+import { API_URL } from "../Helper";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -71,7 +72,7 @@ function SkillBlock(props) {
       className={classes.skillBlock}
     >
       <Image
-        src={`${process.env.NEXT_PUBLIC_API_URL}/photos/${imgSrc}`}
+        src={`${API_URL}/photos/${imgSrc}`}
         height={72}
         width={72}
         className={classes.skillImg}
