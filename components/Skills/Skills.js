@@ -95,7 +95,7 @@ export default function Skills(...props) {
           <Typography
             className={classes.title}
             variant="h3"
-            component={"h6"}
+            component={"p"}
             gutterBottom
           >
             My <span className={classes.highlight}>Skills</span>

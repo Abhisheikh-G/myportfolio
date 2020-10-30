@@ -70,8 +70,6 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     marginTop: theme.spacing(1),
     marginLeft: theme.spacing(6),
-    height: 125,
-    width: 125,
   },
 }));
 
@@ -93,11 +91,11 @@ export default function Header(props) {
       <List className={classes.list}>
         <ListItem className={classes.drawerHeader}>
           <Image
-            unsized
             style={{ margin: "auto" }}
             src="/logo.svg"
             alt="logo"
-            className={classes.logo}
+            height={125}
+            width={125}
           />
         </ListItem>
         <Divider />
@@ -143,12 +141,7 @@ export default function Header(props) {
             classes={{ root: classes.toolbarBg }}
             disableGutters
           >
-            <Image
-              unsized
-              src="/logo.svg"
-              alt="logo"
-              className={classes.logo}
-            />
+            <Image src="/logo.svg" alt="logo" height={125} width={125} />
             <Hidden smDown>
               <Tabs
                 value={value}
