@@ -1,6 +1,6 @@
 const withPWA = require("next-pwa");
 
-const PWA_CONFIG = withPWA({
+module.exports = withPWA({
   pwa: {
     dest: "public",
   },
@@ -15,7 +15,6 @@ const ENV_CONFIG = {
 };
 
 module.exports = {
-  PWA_CONFIG,
   ENV_CONFIG,
   images: {
     domains: [
