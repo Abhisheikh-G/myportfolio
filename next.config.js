@@ -10,7 +10,7 @@ const IMAGE_CONFIG = {};
 
 const ENV_CONFIG = {
   env: {
-    API_URL: "https://agill-portfolio.herokuapp.com",
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
 };
 
