@@ -18,6 +18,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import WorkIcon from "@material-ui/icons/Work";
 import clsx from "clsx";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,7 +92,8 @@ export default function Header(props) {
     <React.Fragment>
       <List className={classes.list}>
         <ListItem className={classes.drawerHeader}>
-          <img
+          <Image
+            unsized
             style={{ margin: "auto" }}
             src="logo.svg"
             alt="logo"

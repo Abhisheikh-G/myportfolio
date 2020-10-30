@@ -78,7 +78,7 @@ function SkillBlock(props) {
         className={classes.skillImg}
         alt={alt}
       />
-      <Typography variant="h6" className={classes.skillText}>
+      <Typography variant="h6" component={"p"} className={classes.skillText}>
         {text}
       </Typography>
     </Box>
