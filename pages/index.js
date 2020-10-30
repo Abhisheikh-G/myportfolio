@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Hero from "../components/Hero/Hero";
 import { makeStyles, Box } from "@material-ui/core";
-import dynamic from "next/dynamic";
 import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
 import Skills from "../components/Skills/Skills";
@@ -18,9 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Index({ projects }) {
+export default function Index({ projects, skills }) {
   const classes = useStyles();
-  console.log("Index props: ", projects);
 
   let options = {
     root: null,
@@ -53,7 +51,7 @@ export default function Index({ projects }) {
     <React.Fragment>
       <Box className="container">
         <Hero />
-        <Skills />
+        <Skills skills={skills} />
         <Projects projects={projects} />
         <Contact />
       </Box>
@@ -66,9 +64,14 @@ export async function getStaticProps(context) {
   let data = await res.json();
   const { projects } = data;
 
+  let res = await fetch("https://agill-portfolio.herokuapp.com/skills.json");
+  let data = await res.json();
+  const { skills } = data;
+
   return {
     props: {
       projects,
+      skills,
     },
   };
 }

@@ -5,7 +5,6 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import { skillData } from "./skillData";
 import Image from "next/image";
 import React from "react";
 
@@ -87,7 +86,7 @@ function SkillBlock(props) {
 
 export default function Skills(...props) {
   const classes = useStyles(props);
-
+  const { skills } = props;
   return (
     <React.Fragment>
       <Box className={classes.section} component="section">
@@ -101,7 +100,7 @@ export default function Skills(...props) {
             My <span className={classes.highlight}>Skills</span>
           </Typography>
           <Grid container justify="space-evenly">
-            {skillData.map((skill) => (
+            {skills.map((skill) => (
               <Grid item key={skill.text}>
                 <SkillBlock
                   color={skill.color}

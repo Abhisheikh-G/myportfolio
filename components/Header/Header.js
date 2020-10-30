@@ -19,6 +19,8 @@ import MailIcon from "@material-ui/icons/Mail";
 import WorkIcon from "@material-ui/icons/Work";
 import clsx from "clsx";
 import Image from "next/image";
+import { DriveEtaSharp } from "@material-ui/icons";
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,9 +93,10 @@ export default function Header(props) {
       <List className={classes.list}>
         <ListItem className={classes.drawerHeader}>
           <Image
-            style={{ margin: "auto" }}
+            className={classes.logo}
             src="/logo.svg"
             alt="logo"
+            priority
             height={125}
             width={125}
           />
@@ -141,7 +144,15 @@ export default function Header(props) {
             classes={{ root: classes.toolbarBg }}
             disableGutters
           >
-            <Image src="/logo.svg" alt="logo" height={125} width={125} />
+            <Box ml={6}>
+              <Image
+                priority
+                src="/logo.svg"
+                alt="logo"
+                height={125}
+                width={125}
+              />
+            </Box>
             <Hidden smDown>
               <Tabs
                 value={value}
