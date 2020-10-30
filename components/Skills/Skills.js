@@ -84,9 +84,10 @@ function SkillBlock(props) {
   );
 }
 
-export default function Skills(...props) {
+export default function Skills(props) {
   const classes = useStyles(props);
   const { skills } = props;
+
   return (
     <React.Fragment>
       <Box className={classes.section} component="section">

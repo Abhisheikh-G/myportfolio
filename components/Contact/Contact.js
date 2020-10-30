@@ -94,7 +94,7 @@ export default function Contact() {
             </FormLabel>
             <TextField
               className={classes.textfield}
-              Enter="text"
+              type="text"
               id="email"
               placeholder="Enter your email here.."
               name="email"

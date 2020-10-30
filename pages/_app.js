@@ -66,7 +66,7 @@ export default function MyApp(props) {
           href="homescreen.png"
         />
         <meta name="theme-color" content={theme.palette.secondary.main} />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <link rel="shortcut icon" href="favicon.ico" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Abhisheikh Gill | Portfolio" />
