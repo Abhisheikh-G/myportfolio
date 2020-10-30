@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import FormLabel from "@material-ui/core/FormLabel";
 import PillButton from "../PillButton/PillButton";
 import React from "react";
 
@@ -66,28 +67,53 @@ export default function Contact() {
             boxShadow={8}
             onSubmit={handleSubmit(onSubmit)}
           >
+            <FormLabel
+              for="name"
+              className={classes.textfield}
+              required
+              focused
+            >
+              Name
+            </FormLabel>
             <TextField
               className={classes.textfield}
               type="text"
-              label="Name"
+              id="name"
               name="name"
-              placeholder="Type your name here.."
+              placeholder="Enter your name here.."
               inputRef={register({ required: true, maxLength: 80 })}
             />
+
+            <FormLabel
+              for="email"
+              className={classes.textfield}
+              focused
+              required
+            >
+              Email
+            </FormLabel>
             <TextField
               className={classes.textfield}
-              type="text"
-              placeholder="Type your email here.."
+              Enter="text"
+              id="email"
+              placeholder="Enter your email here.."
               name="email"
-              label="Email"
               inputRef={register({ required: true, pattern: /^\S+@\S+$/i })}
             />
+            <FormLabel
+              for="message"
+              className={classes.textfield}
+              focused
+              required
+            >
+              Message
+            </FormLabel>
             <TextField
               className={classes.textfield}
               multiline
+              id="message"
               name="message"
-              label="Message"
-              placeholder="Type your message here.."
+              placeholder="Enter your message here.."
               inputRef={register({ required: true, maxLength: 300 })}
             />
 
