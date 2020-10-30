@@ -8,8 +8,9 @@ import {
   Divider,
 } from "@material-ui/core";
 import PillButton from "../PillButton/PillButton";
-import React from "react";
+import React, { useState } from "react";
 import Link from "../../src/Link";
+import Typist from "react-typist";
 import dynamic from "next/dynamic";
 
 const Fade = dynamic(() => import("@material-ui/core/Fade"));
@@ -48,20 +49,34 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Hero() {
   const classes = useStyles();
+  const [title, setTitle] = useState(false);
+  const [body, setBody] = useState(false);
   return (
     <React.Fragment>
       <Box className={classes.content}>
         <Container maxWidth="lg">
-          <Fade in={true}>
+          <Typist
+            avgTypingDelay={70}
+            cursor={{ hideWhenDone: true, show: false }}
+            onTypingDone={() => setTitle(true)}
+          >
             <Typography className={classes.title} variant="h2" gutterBottom>
               Looking For A <br />
               <span className={classes.highlight}>Web Developer?</span>
             </Typography>
+          </Typist>
+
+          <Fade
+            in={title}
+            timeout={{ enter: 1000, exit: 1000 }}
+            onEntered={() => setBody(true)}
+          >
+            <Typography variant="h3" gutterBottom={true} align="center">
+              Hi, I'm{" "}
+              <span className={classes.highlight}>Abhisheikh Gill.</span>
+            </Typography>
           </Fade>
-          <Typography variant="h3" gutterBottom={true} align="center">
-            Hi, I'm <span className={classes.highlight}>Abhisheikh Gill.</span>
-          </Typography>
-          <Container maxWidth="md">
+          <Fade in={body} timeout={{ enter: 1000, exit: 1000 }}>
             <Typography
               variant="h5"
               component={"p"}
@@ -77,7 +92,7 @@ export default function Hero() {
                 React.js, Next.js, Gatsby.js, Node.js, PostgreSQL and MongoDB.
               </span>
             </Typography>
-          </Container>
+          </Fade>
           <Box display="flex" justifyContent="center">
             <Link href="#contact" className={classes.link}>
               <PillButton text="Contact Me" />
