@@ -64,8 +64,8 @@ export async function getStaticProps(context) {
   let data = await res.json();
   const { projects } = data;
 
-  let res = await fetch("https://agill-portfolio.herokuapp.com/skills.json");
-  let data = await res.json();
+  res = await fetch("https://agill-portfolio.herokuapp.com/skills.json");
+  data = await res.json();
   const { skills } = data;
 
   return {
