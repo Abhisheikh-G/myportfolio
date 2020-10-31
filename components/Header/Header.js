@@ -78,12 +78,17 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(6),
   },
   headerTitle: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(5),
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(1),
     [theme.breakpoints.down("xs")]: {
       marginLeft: theme.spacing(1),
+      marginTop: theme.spacing(3),
       fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(2),
+      marginTop: theme.spacing(4),
     },
     [theme.breakpoints.up("lg")]: {
       marginLeft: theme.spacing(5),
