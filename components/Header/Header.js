@@ -1,7 +1,7 @@
 import React, { useState, lazy } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Link from "../../src/Link";
@@ -19,7 +19,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import WorkIcon from "@material-ui/icons/Work";
 import clsx from "clsx";
 import Image from "next/image";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography, useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
   menuIcon: {
     height: 48,
     width: 48,
-    marginLeft: "auto",
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(2),
+    marginRight: theme.spacing(4),
     cursor: "pointer",
     position: "sticky",
   },
@@ -78,6 +78,8 @@ export default function Header(props) {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
+  const matchesSMUp = useMediaQuery(theme.breakpoints.up("sm"));
 
   const drawerLink = clsx([classes.tab, classes.drawerLink, classes.link]);
 
@@ -143,7 +145,7 @@ export default function Header(props) {
             classes={{ root: classes.toolbarBg }}
             disableGutters
           >
-            <Box ml={2} mt={1}>
+            <Box ml={1} mt={1}>
               <Image
                 priority
                 src="/logo.svg"
@@ -153,12 +155,14 @@ export default function Header(props) {
               />
             </Box>
             <Typography
-              variant="h4"
+              variant={matchesSMUp ? "h3" : "h5"}
               component={Box}
               fontWeight={"900"}
-              ml={4}
+              ml={2}
+              mr={1}
               mt={2}
               color="secondary"
+              gutterBottom={false}
             >
               FULL- STACK WEB DEVELOPMENT & DESIGN
             </Typography>
