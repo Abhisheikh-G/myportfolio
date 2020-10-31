@@ -72,7 +72,8 @@ export default function Hero() {
             onEntered={() => setBody(true)}
           >
             <Typography variant="h3" gutterBottom={true} align="center">
-              Hi, my name is <br />
+              Hello, my name is
+              <br />
               <span className={classes.highlight}>Abhisheikh Gill.</span>
             </Typography>
           </Fade>
