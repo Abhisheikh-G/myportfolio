@@ -33,10 +33,15 @@ const useStyles = makeStyles((theme) => ({
   menuIcon: {
     height: 48,
     width: 48,
+    marginLeft: "auto",
+    marginRight: theme.spacing(2),
     marginTop: theme.spacing(2),
-    marginRight: theme.spacing(4),
     cursor: "pointer",
     position: "sticky",
+    [theme.breakpoints.down("xs")]: {
+      height: 38,
+      width: 38,
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -164,7 +169,7 @@ export default function Header(props) {
               color="secondary"
               gutterBottom={false}
             >
-              FULL- STACK WEB DEVELOPMENT & DESIGN
+              WEB DEVELOPMENT & DESIGN
             </Typography>
             <Hidden smDown>
               <Tabs
