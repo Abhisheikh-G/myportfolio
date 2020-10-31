@@ -7,7 +7,6 @@ import {
 } from "@material-ui/core";
 import Image from "next/image";
 import React from "react";
-import { API_URL } from "../Helper";
 
 const useStyles = makeStyles((theme) => ({
   section: {

@@ -1,25 +1,20 @@
-import React, { useState, lazy } from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import { makeStyles } from "@material-ui/core/styles";
 import Link from "../../src/Link";
-import Hidden from "@material-ui/core/Hidden";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import MenuIcon from "@material-ui/icons/Menu";
-import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import WorkIcon from "@material-ui/icons/Work";
 import clsx from "clsx";
 import Image from "next/image";
-import { Box, Typography, useMediaQuery } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -98,16 +93,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const [value, setValue] = useState(0);
+
   const [open, setOpen] = useState(false);
 
   const drawerLink = clsx([classes.tab, classes.drawerLink, classes.link]);
 
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   const list = () => (
     <React.Fragment>
@@ -183,29 +174,6 @@ export default function Header(props) {
             >
               WEB DEVELOPMENT & DESIGN
             </Typography>
-            {/* <Hidden smDown>
-              <Tabs
-                value={value}
-                style={{ marginLeft: "auto" }}
-                onChange={handleChange}
-                aria-label="simple tabs example"
-              >
-                <Tab
-                  component={Link}
-                  href="#contact"
-                  className={classes.link}
-                  label="Contact"
-                />
-                <Tab
-                  component={Link}
-                  href="#mywork"
-                  className={classes.link}
-                  label="My Work"
-                />
-              </Tabs>
-            </Hidden> */}
-
-            {/* <Hidden mdUp> */}
             <MenuIcon
               className={classes.menuIcon}
               onClick={() => setOpen(!open)}
@@ -220,7 +188,6 @@ export default function Header(props) {
             >
               {list()}
             </SwipeableDrawer>
-            {/* </Hidden> */}
           </Toolbar>
         </AppBar>
       </div>

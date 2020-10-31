@@ -18,7 +18,6 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import Collapse from "@material-ui/core/Collapse";
 import Image from "next/image";
 import React, { useState } from "react";
-import { API_URL } from "../Helper";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -66,10 +65,6 @@ const useStyles = makeStyles((theme) => ({
 function Project(props) {
   const { title, description, work, image, projectLink } = props;
   const [expanded, setExpanded] = useState(false);
-
-  const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesLGup = useMediaQuery(theme.breakpoints.up("lg"));
   const classes = useStyles();
 
   function handleExpand() {

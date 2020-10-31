@@ -1,15 +1,5 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
-import {
-  red,
-  blueGrey,
-  yellow,
-  grey,
-  pink,
-  teal,
-  blue,
-  cyan,
-  lightBlue,
-} from "@material-ui/core/colors";
+import { red, yellow } from "@material-ui/core/colors";
 
 // Create a theme instance.
 let theme = createMuiTheme({
