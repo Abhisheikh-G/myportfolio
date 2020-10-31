@@ -99,7 +99,7 @@ export default function Hero() {
               </span>
             </Typography>
           </Fade>
-          <Box display="flex" justifyContent="flex-start">
+          <Box display="flex" justifyContent="center">
             <Link href="#contact" className={classes.link}>
               <PillButton text="Contact Me" />
             </Link>
