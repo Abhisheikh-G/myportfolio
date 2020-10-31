@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(6),
   },
   title: {
-    textAlign: "center",
+    textAlign: "left",
   },
   avatarLarge: {
     width: theme.spacing(20),
@@ -60,7 +60,12 @@ export default function Hero() {
             cursor={{ hideWhenDone: true, show: false }}
             onTypingDone={() => setTitle(true)}
           >
-            <Typography className={classes.title} variant="h2" gutterBottom>
+            <Typography
+              align="left"
+              className={classes.title}
+              variant="h2"
+              gutterBottom
+            >
               Looking For A <br />
               <span className={classes.highlight}>Web Developer?</span>
             </Typography>
@@ -71,7 +76,7 @@ export default function Hero() {
             timeout={{ enter: 1000, exit: 1000 }}
             onEntered={() => setBody(true)}
           >
-            <Typography variant="h3" gutterBottom={true} align="center">
+            <Typography variant="h3" gutterBottom={true} align="left">
               Hello, my name is
               <br />
               <span className={classes.highlight}>Abhisheikh Gill.</span>
@@ -82,7 +87,7 @@ export default function Hero() {
               variant="h5"
               component={"p"}
               gutterBottom={true}
-              align="center"
+              align="left"
             >
               Nice to meet you, I'm a{" "}
               <span className={classes.highlight}>
@@ -94,7 +99,7 @@ export default function Hero() {
               </span>
             </Typography>
           </Fade>
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" justifyContent="flex-start">
             <Link href="#contact" className={classes.link}>
               <PillButton text="Contact Me" />
             </Link>
