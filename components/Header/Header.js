@@ -160,7 +160,7 @@ export default function Header(props) {
               fontWeight={"900"}
               ml={2}
               mr={1}
-              mt={2}
+              mt={1}
               color="secondary"
               gutterBottom={false}
             >
