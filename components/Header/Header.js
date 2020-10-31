@@ -19,8 +19,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import WorkIcon from "@material-ui/icons/Work";
 import clsx from "clsx";
 import Image from "next/image";
-import { DriveEtaSharp } from "@material-ui/icons";
-import { Box } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -144,7 +143,7 @@ export default function Header(props) {
             classes={{ root: classes.toolbarBg }}
             disableGutters
           >
-            <Box ml={4} mt={1}>
+            <Box ml={2} mt={1}>
               <Image
                 priority
                 src="/logo.svg"
@@ -153,6 +152,16 @@ export default function Header(props) {
                 width={125}
               />
             </Box>
+            <Typography
+              variant="h4"
+              component={Box}
+              fontWeight={"900"}
+              ml={4}
+              mt={2}
+              color="secondary"
+            >
+              FULL- STACK WEB DEVELOPMENT & DESIGN
+            </Typography>
             <Hidden smDown>
               <Tabs
                 value={value}
