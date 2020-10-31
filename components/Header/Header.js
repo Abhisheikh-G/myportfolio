@@ -91,6 +91,7 @@ export default function Header(props) {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const matchesSMUp = useMediaQuery(theme.breakpoints.up("sm"));
+  const matches450Up = useMediaQuery("(min-width:450px)");
 
   const drawerLink = clsx([classes.tab, classes.drawerLink, classes.link]);
 
@@ -166,7 +167,7 @@ export default function Header(props) {
               />
             </Box>
             <Typography
-              variant={matchesSMUp ? "h3" : "h5"}
+              variant={matchesSMUp ? "h3" : matches450Up ? "h4" : "h6"}
               component="div"
               className={classes.headerTitle}
               color="secondary"
