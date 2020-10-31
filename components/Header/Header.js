@@ -77,6 +77,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginLeft: theme.spacing(6),
   },
+  headerTitle: {
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(1),
+    fontWeight: "900",
+  },
 }));
 
 export default function Header(props) {
@@ -161,11 +167,8 @@ export default function Header(props) {
             </Box>
             <Typography
               variant={matchesSMUp ? "h3" : "h5"}
-              component={Box}
-              fontWeight={"900"}
-              ml={2}
-              mr={1}
-              mt={1}
+              component="div"
+              className={classes.headerTitle}
               color="secondary"
               gutterBottom={false}
             >
