@@ -85,6 +85,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       fontSize: "1.5rem",
     },
+    [theme.breakpoints.up("lg")]: {
+      marginLeft: theme.spacing(5),
+    },
   },
 }));
 
@@ -175,7 +178,7 @@ export default function Header(props) {
             >
               WEB DEVELOPMENT & DESIGN
             </Typography>
-            <Hidden smDown>
+            {/* <Hidden smDown>
               <Tabs
                 value={value}
                 style={{ marginLeft: "auto" }}
@@ -195,24 +198,24 @@ export default function Header(props) {
                   label="My Work"
                 />
               </Tabs>
-            </Hidden>
+            </Hidden> */}
 
-            <Hidden mdUp>
-              <MenuIcon
-                className={classes.menuIcon}
-                onClick={() => setOpen(!open)}
-              />
-              <SwipeableDrawer
-                open={open}
-                classes={{ paper: classes.drawer }}
-                disableBackdropTransition={!iOS}
-                disableDiscovery={iOS}
-                onOpen={() => setOpen(true)}
-                onClose={() => setOpen(false)}
-              >
-                {list()}
-              </SwipeableDrawer>
-            </Hidden>
+            {/* <Hidden mdUp> */}
+            <MenuIcon
+              className={classes.menuIcon}
+              onClick={() => setOpen(!open)}
+            />
+            <SwipeableDrawer
+              open={open}
+              classes={{ paper: classes.drawer }}
+              disableBackdropTransition={!iOS}
+              disableDiscovery={iOS}
+              onOpen={() => setOpen(true)}
+              onClose={() => setOpen(false)}
+            >
+              {list()}
+            </SwipeableDrawer>
+            {/* </Hidden> */}
           </Toolbar>
         </AppBar>
       </div>
