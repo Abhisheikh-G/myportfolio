@@ -81,7 +81,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(1),
-    fontWeight: "900",
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: theme.spacing(1),
+      fontSize: "1.5rem",
+    },
   },
 }));
 
@@ -89,9 +92,6 @@ export default function Header(props) {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   const [open, setOpen] = useState(false);
-  const theme = useTheme();
-  const matchesSMUp = useMediaQuery(theme.breakpoints.up("sm"));
-  const matches450Up = useMediaQuery("(min-width:450px)");
 
   const drawerLink = clsx([classes.tab, classes.drawerLink, classes.link]);
 
@@ -167,7 +167,7 @@ export default function Header(props) {
               />
             </Box>
             <Typography
-              variant={matchesSMUp ? "h3" : matches450Up ? "h4" : "h6"}
+              variant={"h3"}
               component="div"
               className={classes.headerTitle}
               color="secondary"
