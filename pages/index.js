@@ -38,10 +38,7 @@ export default function Index({ projects, skills }) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.className = " " + classes.active;
-          console.log(entry.target);
-        } else {
-          entry.target.className = "";
-          entry.target.className = " " + classes.inactive;
+          observer.unobserve(entry.target);
         }
       });
     }

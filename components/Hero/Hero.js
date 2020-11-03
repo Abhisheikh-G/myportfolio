@@ -6,6 +6,8 @@ import {
   Button,
   Avatar,
   Divider,
+  useTheme,
+  useMediaQuery,
 } from "@material-ui/core";
 import PillButton from "../PillButton/PillButton";
 import React, { useState } from "react";
@@ -51,6 +53,8 @@ export default function Hero() {
   const classes = useStyles();
   const [title, setTitle] = useState(false);
   const [body, setBody] = useState(false);
+  const theme = useTheme();
+  const matchesSMDown = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <React.Fragment>
       <Box className={classes.content}>
@@ -66,7 +70,7 @@ export default function Hero() {
               variant="h2"
               gutterBottom
             >
-              Looking For A <br />
+              Looking For A {matchesSMDown ? " " : <br />}
               <span className={classes.highlight}>Web Developer?</span>
             </Typography>
           </Typist>
@@ -78,7 +82,7 @@ export default function Hero() {
           >
             <Typography variant="h3" gutterBottom={true} align="left">
               Hello, my name is
-              <br />
+              {matchesSMDown ? " " : <br />}
               <span className={classes.highlight}>Abhisheikh Gill.</span>
             </Typography>
           </Fade>
