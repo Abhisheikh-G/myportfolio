@@ -71,7 +71,7 @@ export default function Hero() {
               gutterBottom
             >
               Looking For A{" "}
-              {matchesSMDown ? <br /> : " "}
+              {matchesSMDown ? <br /> : <span />}
               <span className={classes.highlight}>Web Developer?</span>
             </Typography>
           </Typist>
