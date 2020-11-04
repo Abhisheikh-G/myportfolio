@@ -70,7 +70,8 @@ export default function Hero() {
               variant="h2"
               gutterBottom
             >
-              Looking For A {matchesSMDown ? <br /> : " "}
+              Looking For A{" "}
+              {matchesSMDown ? <br /> : " "}
               <span className={classes.highlight}>Web Developer?</span>
             </Typography>
           </Typist>
@@ -82,7 +83,7 @@ export default function Hero() {
           >
             <Typography variant="h3" gutterBottom={true} align="left">
               Hello, my name is
-              {matchesSMDown ? <br /> : <React.Fragment />}
+              {matchesSMDown ? " "}
               <span className={classes.highlight}>Abhisheikh Gill.</span>
             </Typography>
           </Fade>
